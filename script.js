@@ -4,11 +4,16 @@ const quoteElement = document.getElementById('quote');
 
 const questions = {
     1: [
-        { title: 'Electronics ST1', link: 'Electronics st1.pdf' },
+       { title: 'Electronics ST1', link: 'Electronics st1.pdf' },
+        { title: 'Electronics ST2', link: 'Electronics st2.pdf' },
         { title: 'Chemistry ST1', link: 'Chemistry st1.pdf' },
+        { title: 'Chemistry ST2', link: 'Chemistry st2.pdf' },
         { title: 'Maths ST1', link: 'Maths st1.pdf' },
+        { title: 'Maths ST2', link: 'Maths st2.pdf' },
         { title: 'Mechanical ST1', link: 'Mechanical st1.pdf' },
-        { title: 'Softskills ST1', link: 'Softskills st1.pdf' }
+        { title: 'Mechanical ST2', link: 'Mechanical st2.pdf' },
+        { title: 'Softskills ST1', link: 'Softskills st1.pdf' },
+        { title: 'Softskills ST2', link: 'Softskills st2.pdf' }
     ],
     // 2: [
     //     { title: 'Mathematics II', link: 'path/to/mathematics2.pdf' },
