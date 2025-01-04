@@ -25,8 +25,18 @@ const questions = {
 const quotes = [
     "The future belongs to those who prepare for it today.",
     "Success is not final, failure is not fatal: It is the courage to continue that counts.",
+    "When theory meets practice, engineering is born.",
     "Education is the most powerful weapon which you can use to change the world.",
-    "Don’t watch the clock; do what it does. Keep going."
+    "Don’t watch the clock; do what it does. Keep going.",
+    "Hardships often prepare ordinary people for an extraordinary destiny.",
+    "The only limit to our realization of tomorrow will be our doubts of today.",
+    "Dream big and dare to fail.",
+    "The world runs on ideas, and engineers bring them to life.",
+    "Believe you can and you're halfway there.",
+    "What you get by achieving your goals is not as important as what you become by achieving your goals.",
+    "Strive not to be a success, but rather to be of value.",
+    "Do not wait to strike till the iron is hot, but make it hot by striking.",
+    "If you want to shine like a sun, first burn like a sun."
 ];
 
 function renderQuestions(semester) {
