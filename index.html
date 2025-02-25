@@ -1,0 +1,365 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question Papers</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>AKGEC Question Papers</h1>
+    </header>
+    <div class="container">
+        <div class="semester-select">
+            <label for="semester">Select Semester: </label>
+            <select id="semester">
+                <option value="1">Semester 1</option>
+                <option value="2">Semester 2</option>
+                <option value="3">Semester 3</option>
+                <option value="4">Semester 4</option>
+                <option value="5">Semester 5</option>
+                <option value="6">Semester 6</option>
+                <option value="7">Semester 7</option>
+                <option value="8">Semester 8</option>
+            </select>
+        </div>
+        <ul class="question-list"> -->
+<!-- Dynamic content will be inserted here -->
+<!-- </ul>
+    </div>
+    <footer>
+        <p>&copy; 2025 AKGEC</p>
+    </footer>
+    <div class="quote" id="quote"></div>
+    <script src="script.js"></script>
+</body>
+
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question Paper Management</title>
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <style>
+        /* body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #141e30, #243b55);
+            color: #f0f0f0;
+        } /*normal BG*/
+
+        /*  body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: radial-gradient(circle, rgba(0, 0, 0, 0.8), #0f0c29, #302b63, #24243e);
+            color: #f0f0f0;
+            box-shadow: 0px 0px 50px rgba(0, 255, 255, 0.5);
+        }
+
+        /*NEON BG*/
+
+        /* header {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(8px);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(12px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .semester-select {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        select {
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 8px;
+            border: none;
+            outline: none;
+            background: rgba(255, 255, 255, 0.2);
+            color: #f0f0f0;
+        }
+
+        select:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .question-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .question-list li {
+            margin: 10px 0;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: transform 0.3s ease;
+        }
+
+        .question-list li:hover {
+            transform: scale(1.02);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .download-button {
+            background: linear-gradient(145deg, #56ab2f, #a8e063);
+            border: none;
+            border-radius: 12px;
+            color: white;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+        }
+
+        .download-button:hover {
+            box-shadow: 0 0 15px rgba(168, 224, 99, 0.75);
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.5);
+            margin-top: 20px;
+        }
+
+        .quote {
+            position: fixed;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px 20px;
+            border-radius: 8px;
+            color: #f0f0f0;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            .quote {
+                top: 10px;
+                bottom: unset;
+            }
+        }*/
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #f0f0f0;
+            overflow: auto;
+            /* Allows scrolling */
+            height: 100vh;
+
+        }
+
+        /* Background Video Styling */
+        .bg-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        /* Glassmorphism Effect */
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(12px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+            min-height: 100vh;
+            /* Ensures space for scrolling */
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(8px);
+        }
+
+        select {
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 8px;
+            border: none;
+            outline: none;
+            background: rgba(255, 255, 255, 0.2);
+            color: #f0f0f0;
+        }
+
+        .question-list li {
+            margin: 10px 0;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .question-list li:hover {
+            transform: scale(1.02);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Quote Styling */
+        .quote {
+            position: fixed;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px 20px;
+            border-radius: 8px;
+            color: #f0f0f0;
+            font-size: 14px;
+            text-align: center;
+            z-index: 10;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="stars"></div> -->
+    <video class="bg-video" src="bg.mp4" autoplay loop muted></video>
+
+    <header>
+        <h1>AKGEC Question Paper Management</h1>
+    </header>
+    <div class="container">
+        <div class="semester-select">
+            <label for="semester">Select Semester: </label>
+            <select id="semester">
+                <option value="1">Semester 1</option>
+                <option value="2">Semester 2</option>
+                <option value="3">Semester 3</option>
+                <option value="4">Semester 4</option>
+                <option value="5">Semester 5</option>
+                <option value="6">Semester 6</option>
+                <option value="7">Semester 7</option>
+                <option value="8">Semester 8</option>
+            </select>
+        </div>
+
+        <ul class="question-list">
+            <!-- Dynamic content will be inserted here -->
+        </ul>
+    </div>
+    <footer>
+        <p>&copy;Akash CSIT'28</p>
+    </footer>
+    <div class="quote" id="quote"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init();
+
+        const questionList = document.querySelector('.question-list');
+        const semesterSelect = document.getElementById('semester');
+        const quoteElement = document.getElementById('quote');
+
+        const questions = {
+            1: [
+                { title: 'Electronics ST1', link: 'Electronics st1.pdf' },
+                { title: 'Electronics ST2', link: 'Electronics st2.pdf' },
+                { title: 'Electronics PUT', link: 'Electronics put.pdf' },
+                { title: 'Chemistry ST1', link: 'Chemistry st1.pdf' },
+                { title: 'Chemistry ST2', link: 'Chemistry st2.pdf' },
+                { title: 'Chemistry PUT', link: 'Chemistry put.pdf' },
+                { title: 'Maths ST1', link: 'Maths st1.pdf' },
+                { title: 'Maths ST2', link: 'Maths st2.pdf' },
+                { title: 'Maths PUT', link: 'Maths put.pdf' },
+                { title: 'Mechanical ST1', link: 'Mechanical st1.pdf' },
+                { title: 'Mechanical ST2', link: 'Mechanical st2.pdf' },
+                { title: 'Mechanical PUT', link: 'Mechanical put.pdf' },
+                { title: 'Softskills ST1', link: 'Softskills st1.pdf' },
+                { title: 'Softskills ST2', link: 'Softskills st2.pdf' },
+                { title: 'Softskills PUT', link: 'Softskills put.pdf' },
+
+
+            ],
+            2: [
+                { title: 'Mathematics II', link: 'path/to/mathematics2.pdf' },
+                { title: 'Chemistry', link: 'path/to/chemistry.pdf' }
+            ],
+            // Add other semesters
+        };
+
+        const quotes = [
+            "The future belongs to those who prepare for it today.",
+            "Success is not final, failure is not fatal: It is the courage to continue that counts.",
+            "Education is the most powerful weapon which you can use to change the world.",
+            "Don’t watch the clock; do what it does. Keep going.",
+            "Life is never easy. There is work to be done and obligations to be met – obligations to truth, to justice, and to liberty.",
+            "The only impossible journey is the one you never begin.",
+            "The only way to do great work is to love what you do.",
+            "The best way to predict the future is to create it.",
+            "The future belongs to those who believe in the beauty of their dreams.",
+            "The only limit to our realization of tomorrow will be our doubts of today.",
+            "The future belongs to those who believe in the beauty of their dreams.",
+            "The only limit to our realization of tomorrow will be our doubts of today.",
+        ];
+
+        function renderQuestions(semester) {
+            questionList.innerHTML = '';
+            if (questions[semester]) {
+                questions[semester].forEach(q => {
+                    const li = document.createElement('li');
+                    li.setAttribute('data-aos', 'fade-up');
+                    li.innerHTML = `
+                        <span>${q.title}</span>
+                        <button class="download-button" onclick="location.href='${q.link}'">Download</button>
+                    `;
+                    questionList.appendChild(li);
+                });
+            } else {
+                questionList.innerHTML = '<p>No question papers available for this semester.</p>';
+            }
+        }
+
+        function showRandomQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            quoteElement.textContent = quotes[randomIndex];
+        }
+
+        semesterSelect.addEventListener('change', (e) => {
+            renderQuestions(e.target.value);
+        });
+
+        // Initial render
+        renderQuestions(semesterSelect.value);
+        showRandomQuote();
+
+        // Update quote every 10 seconds
+        setInterval(showRandomQuote, 10000);
+    </script>
+</body>
+
+</html>
