@@ -230,7 +230,7 @@
         }
 
         /* Quote Styling */
-        .quote {
+        /* .quote {
             position: fixed;
             top: 10px;
             left: 50%;
@@ -242,7 +242,21 @@
             font-size: 14px;
             text-align: center;
             z-index: 10;
-        }
+        } */
+        .quote {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: #f0f0f0;
+    font-size: 14px;
+    text-align: center;
+    z-index: 10;
+    transition: all 0.4s ease;
+    bottom: 10px; 
+}
         footer {
             text-align: center;
             padding: 15px;
@@ -426,6 +440,25 @@
             const randomIndex = Math.floor(Math.random() * quotes.length);
             quoteElement.textContent = quotes[randomIndex];
         }
+        function updateQuotePosition() {
+    const scrollTop = window.scrollY;
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight;
+
+    
+    if (scrollTop + windowHeight >= documentHeight - 50) {
+        quoteElement.style.top = "10px";
+        quoteElement.style.bottom = "auto";
+    } else {
+        quoteElement.style.bottom = "10px";
+        quoteElement.style.top = "auto";
+    }
+}
+
+window.addEventListener("scroll", updateQuotePosition);
+
+// Run once on page load
+updateQuotePosition();
 
         semesterSelect.addEventListener('change', (e) => {
             renderQuestions(e.target.value);
